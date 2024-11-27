@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Pokémon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .form-container {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
+        }
+
+        label {
+            font-size: 14px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Editar Pokémon</h1>
+    </header>
+
+    <div class="form-container">
+        <h2>Editar Informações</h2>
+        <form id="editForm">
+            <div>
+                <label for="description">Descrição</label>
+                <textarea id="description" rows="4"></textarea>
+            </div>
+            <div>
+                <label for="type">Tipo</label>
+                <input type="text" id="type">
+            </div>
+            <div>
+                <label for="weaknesses">Fraquezas</label>
+                <input type="text" id="weaknesses">
+            </div>
+            <div>
+                <label for="advantages">Vantagens</label>
+                <input type="text" id="advantages">
+            </div>
+            <div>
+                <label for="status">Status</label>
+                <input type="text" id="status">
+            </div>
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const infoAtual = JSON.parse(localStorage.getItem('infoAtual'));
+            const pokemon = Object.keys(infoAtual)[0];
+
+            const data = infoAtual[pokemon];
+            document.getElementById('descricao').value = data.descricao;
+            document.getElementById('tipagem').value = data.tipagem;
+            document.getElementById('fraquezas').value = data.fraquezas;
+            document.getElementById('vantagens').value = data.vantagens;
+            document.getElementById('status').value = data.status;
+
+            document.getElementById('editForm').onsubmit = function(event) {
+                event.preventDefault();
+
+                const atualizarInfo = {
+                    [pokemon]: {
+                        descricao: document.getElementById('descricao').value,
+                        tipagem: document.getElementById('tipagem').value,
+                        fraquezas: document.getElementById('fraquezas').value,
+                        vantagens: document.getElementById('vantagens').value,
+                        status: document.getElementById('status').value
+                    }
+                };
+
+                localStorage.setItem('atualizarInfo', JSON.stringify(atualizarInfo));
+
+                window.location.href = 'index.html';
+            };
+        };
+    </script>
+</body>
+</html>

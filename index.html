@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Pokémon Iniciais da Geração 1</h1>
+        <img src="logo_pokemon.png" alt="Logo Pokémon">
+    </header>
+
+    <section class="section">
+        <h2>Evoluções do Charmander</h2>
+        <div class="pokemon-container">
+            <div class="pokemon-card">
+                <img src="https://img.pokemondb.net/artwork/large/charmander.jpg" alt="Charmander">
+                <h3>Charmander</h3>
+                <div class="info-box">
+                    <p><strong>Descrição:</strong> <span id="charmander_descricao">Charmander é um Pokémon de fogo inicial.</span></p>
+                    <p><strong>Tipagem:</strong> <span id="charmander_tipagem">Fogo</span></p>
+                    <p><strong>Fraquezas:</strong> <span id="charmander_fraquezas">Água, Rocha</span></p>
+                    <p><strong>Vantagens:</strong> <span id="charmander_vantagens">Planta, Gelo</span></p>
+                    <p><strong>Status:</strong> <span id="charmander_status">HP: 39, Ataque: 52, Defesa: 43</span></p>
+                    <button onclick="editarInfo('charmander')">Editar</button>
+                </div>
+            </div>
+            <div class="pokemon-card">
+                <img src="https://img.pokemondb.net/artwork/large/charmeleon.jpg" alt="Charmeleon">
+                <h3>Charmeleon</h3>
+                <div class="info-box">
+                    <p><strong>Descrição:</strong> <span id="charmeleon_descricao">Charmeleon é a evolução de Charmander.</span></p>
+                    <p><strong>Tipagem:</strong> <span id="charmeleon_tipagem">Fogo</span></p>
+                    <p><strong>Fraquezas:</strong> <span id="charmeleon_fraquezas">Água, Rocha</span></p>
+                    <p><strong>Vantagens:</strong> <span id="charmeleon_vantagens">Planta, Gelo</span></p>
+                    <p><strong>Status:</strong> <span id="charmeleon_status">HP: 58, Ataque: 64, Defesa: 58</span></p>
+                    <button onclick="editarInfo('charmeleon')">Editar</button>
+                </div>
+            </div>
+            <div class="pokemon-card">
+                <img src="https://img.pokemondb.net/artwork/large/charizard.jpg" alt="Charizard">
+                <h3>Charizard</h3>
+                <div class="info-box">
+                    <p><strong>Descrição:</strong> <span id="charizard_descricao">Charizard é a forma final de Charmander.</span></p>
+                    <p><strong>Tipagem:</strong> <span id="charizard_tipagem">Fogo, Voador</span></p>
+                    <p><strong>Fraquezas:</strong> <span id="charizard_fraquezas">Água, Rocha, Elétrico</span></p>
+                    <p><strong>Vantagens:</strong> <span id="charizard_vantagens">Planta, Gelo, Inseto</span></p>
+                    <p><strong>Status:</strong> <span id="charizard_status">HP: 78, Ataque: 84, Defesa: 78</span></p>
+                    <button onclick="editarInfo('charizard')">Editar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Outros Iniciais da Geração 1</h2>
+        <div class="generation">
+            <div class="pokemon-card">
+                <img src="https://img.pokemondb.net/artwork/large/bulbasaur.jpg" alt="Bulbasaur">
+                <h3>Bulbasaur</h3>
+                <div class="info-box">
+                    <p><strong>Descrição:</strong> <span id="bulbasaur_descricao">Bulbasaur é um Pokémon inicial de planta e veneno.</span></p>
+                    <p><strong>Tipagem:</strong> <span id="bulbasaur_tipagem">Planta, Veneno</span></p>
+                    <p><strong>Fraquezas:</strong> <span id="bulbasaur_fraquezas">Fogo, Voador, Gelo</span></p>
+                    <p><strong>Vantagens:</strong> <span id="bulbasaur_vantagens">Água, Rocha, Terra</span></p>
+                    <p><strong>Status:</strong> <span id="bulbasaur_status">HP: 45, Ataque: 49, Defesa: 49</span></p>
+                    <button onclick="editarInfo('bulbasaur')">Editar</button>
+                </div>
+            </div>
+            <div class="pokemon-card">
+                <img src="https://img.pokemondb.net/artwork/large/squirtle.jpg" alt="Squirtle">
+                <h3>Squirtle</h3>
+                <div class="info-box">
+                    <p><strong>Descrição:</strong> <span id="squirtle_descricao">Squirtle é um Pokémon inicial de água.</span></p>
+                    <p><strong>Tipagem:</strong> <span id="squirtle_tipagem">Água</span></p>
+                    <p><strong>Fraquezas:</strong> <span id="squirtle_fraquezas">Elétrico, Planta</span></p>
+                    <p><strong>Vantagens:</strong> <span id="squirtle_vantagens">Fogo, Terra, Rocha</span></p>
+                    <p><strong>Status:</strong> <span id="squirtle_status">HP: 44, Ataque: 48, Defesa: 65</span></p>
+                    <button onclick="editarInfo('squirtle')">Editar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js">
+    </script>
+</body>
+</html>
