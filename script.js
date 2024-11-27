@@ -17,10 +17,10 @@ window.onload = function() {
 
         Object.keys(info).forEach(pokemon => {
             const data = info[pokemon];
-            document.getElementById(pokemon + '_descricao').innerText = data.description;
-            document.getElementById(pokemon + '_tipagem').innerText = data.type;
-            document.getElementById(pokemon + '_fraquezas').innerText = data.weaknesses;
-            document.getElementById(pokemon + '_vantagens').innerText = data.advantages;
+            document.getElementById(pokemon + '_descricao').innerText = data.descricao;
+            document.getElementById(pokemon + '_tipagem').innerText = data.tipagem;
+            document.getElementById(pokemon + '_fraquezas').innerText = data.fraquezas;
+            document.getElementById(pokemon + '_vantagens').innerText = data.vantagens;
             document.getElementById(pokemon + '_status').innerText = data.status;
         });
 
