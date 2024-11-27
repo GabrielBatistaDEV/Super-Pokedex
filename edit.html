@@ -72,7 +72,7 @@
                 <label for="weaknesses">Fraquezas</label>
                 <input type="text" id="weaknesses">
             </div>
-            <div>
+            <div>residentresidentreesindenresidentnrrrrrrrrrrrrrefdfdfrererererererererereredfkçjsdlfsdjflskdjfsdlkfj
                 <label for="advantages">Vantagens</label>
                 <input type="text" id="advantages">
             </div>
@@ -83,37 +83,45 @@
             <button type="submit">Salvar</button>
         </form>
     </div>
+    
+  <script>
+  window.onload = function() {
+    const pokemonId = 1; // ou obtenha dinamicamente
+    fetch(`/pokemon/${pokemonId}`)
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('description').value = data.description;
+        document.getElementById('type').value = data.type;
+        document.getElementById('weaknesses').value = data.weaknesses;
+        document.getElementById('advantages').value = data.advantages;
+        document.getElementById('status').value = data.status;
+      });
 
-    <script>
-        window.onload = function() {
-            const infoAtual = JSON.parse(localStorage.getItem('infoAtual'));
-            const pokemon = Object.keys(infoAtual)[0];
+    document.getElementById('editForm').onsubmit = function(event) {
+      event.preventDefault();
 
-            const data = infoAtual[pokemon];
-            document.getElementById('descricao').value = data.descricao;
-            document.getElementById('tipagem').value = data.tipagem;
-            document.getElementById('fraquezas').value = data.fraquezas;
-            document.getElementById('vantagens').value = data.vantagens;
-            document.getElementById('status').value = data.status;
+      const updatedInfo = {
+        description: document.getElementById('description').value,
+        type: document.getElementById('type').value,
+        weaknesses: document.getElementById('weaknesses').value,
+        advantages: document.getElementById('advantages').value,
+        status: document.getElementById('status').value,
+      };
 
-            document.getElementById('editForm').onsubmit = function(event) {
-                event.preventDefault();
-
-                const atualizarInfo = {
-                    [pokemon]: {
-                        descricao: document.getElementById('descricao').value,
-                        tipagem: document.getElementById('tipagem').value,
-                        fraquezas: document.getElementById('fraquezas').value,
-                        vantagens: document.getElementById('vantagens').value,
-                        status: document.getElementById('status').value
-                    }
-                };
-
-                localStorage.setItem('atualizarInfo', JSON.stringify(atualizarInfo));
-
-                window.location.href = 'index.html';
-            };
-        };
-    </script>
+      fetch(`/pokemon/${pokemonId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedInfo),
+      })
+      .then(response => response.text())
+      .then(data => {
+        alert('Informações do Pokémon atualizadas com sucesso!');
+        window.location.href = 'index.html'; // Voltar para a página inicial
+      });
+    };
+  };
+</script>
 </body>
 </html>
