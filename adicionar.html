@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Pokémon</title>
+    <link rel="stylesheet" href="styles/adicionar.css">
+</head>
+<body>
+    <header>
+        <h1>Adicionar Novo Pokémon</h1>
+    </header>
+
+    <form id="add-pokemon-form">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="tipagem">Tipagem:</label>
+        <input type="text" id="tipagem" name="tipagem" required>
+
+        <label for="fraquezas">Fraquezas:</label>
+        <input type="text" id="fraquezas" name="fraquezas" required>
+
+        <label for="vantagens">Vantagens:</label>
+        <input type="text" id="vantagens" name="vantagens" required>
+
+        <label for="status">Status (HP, Ataque, Defesa):</label>
+        <input type="text" id="status" name="status" required>
+
+        <button type="submit">Adicionar</button>
+        <button type="button" onclick="window.location.href='index.html'">Cancelar</button>
+    </form>
+
+    <script src="scripts/adicionar.js"></script>
+</body>
+</html>

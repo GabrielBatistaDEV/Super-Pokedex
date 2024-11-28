@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>Pokémon Iniciais</h1>
+        <!-- Botão para adicionar novos Pokémon -->
+        <button id="add-pokemon-button">Adicionar Pokémon</button>
+    </header>
+    
+    <section id="pokemon-list"></section>
+
+    <script src="scripts/main.js"></script>
+
+    <script>
+        // Redirecionar para a página de adicionar Pokémon
+        document.getElementById('add-pokemon-button').addEventListener('click', function () {
+            window.location.href = 'adicionar.html';
+        });
+    </script>
+</body>
+</html>
